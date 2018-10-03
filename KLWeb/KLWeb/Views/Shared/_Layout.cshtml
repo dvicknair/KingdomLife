@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KLWeb</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#home" class="logo">
+                <h1>Kingdom Life Church</h1>
+                <p>
+                    One King. One Kingdom. One Life at a Time for Eternity...
+                </p>
+            </a>
+            <nav class="topnav" id="mainNav">
+                <div style="text-align: center;width: 100%">
+                    <a href="javascript:void(0);" class="hamburger" onclick="hamburger(this)">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </a>
+                </div>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Plan a visit</a>
+                <a asp-area="" asp-controller="Home" asp-action="About" class="current">Who we are</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Ministries</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">What's Next</a>
+            </nav>
+        </div>
+    </header>
+        @RenderBody()
+        <footer>
+            <div class="container">
+                <div class="footer-col">
+                    <h2>Kingdom Life Church</h2>
+                    <hr>
+                </div>
+                <div class="footer-col">
+                    <p>
+                        &copy; 2018 Kingdom Life Church
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h2>Sunday Morning Coffee<br> at 10AM</h2>
+                    <hr>
+                    <p>
+                        Come join us at 10AM on Sunday mornings for a cup of coffee and
+                        Fellowship before service starts!
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    <environment include="Development">
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
